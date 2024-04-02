@@ -1,0 +1,4 @@
+repository "CNU_VR@SniperShell@cloud"
+  path "/"
+    br "/main"
+    co "/main"
