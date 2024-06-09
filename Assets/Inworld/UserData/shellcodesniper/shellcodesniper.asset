@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146eba7038a14426a7d95a5b80da5291, type: 3}
+  m_Name: shellcodesniper
+  m_EditorClassIdentifier: 
+  m_PlayerName: shellcodesniper
+  m_PlayerData: []
+  m_Workspaces:
+  - name: workspaces/bomb
+    displayName: bomb
+    experimentalFeatures: []
+    billingAccount: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes: []
+    keySecrets: []
+  - name: workspaces/default-yyzvfpyjs0ckfbps9ajv7w
+    displayName: Inworld AI Demos
+    experimentalFeatures: []
+    billingAccount: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes: []
+    keySecrets: []
+  m_UserID: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
+  m_BillingAccount: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
