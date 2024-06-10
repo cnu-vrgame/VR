@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146eba7038a14426a7d95a5b80da5291, type: 3}
+  m_Name: shellcodesniper
+  m_EditorClassIdentifier: 
+  m_PlayerName: Student
+  m_PlayerData: []
+  m_Workspaces:
+  - name: workspaces/bomb
+    displayName: bomb
+    experimentalFeatures: []
+    billingAccount: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes:
+    - name: workspaces/bomb/scenes/first_scene
+      displayName: First Scene
+      description: Hello and welcome to the cargo handling team. Today, you'll be
+        in charge of disarming a C4 explosive. This task is extremely important and
+        requires careful attention
+      characterReferences:
+      - character: workspaces/bomb/characters/bomb_defusing_expert
+        characterOverloads:
+        - defaultCharacterDescription:
+            givenName: bomb defusing expert
+            description: The bomb defusing expert is highly skilled in diffusing
+              bombs and ensuring the safety of others. They are calm under pressure
+              and can quickly analyze and defuse dangerous situations. The bomb defusing
+              expert is dedicated to protecting lives and preventing any potential
+              harm. They are meticulous and detail-oriented, always striving for
+              perfection in their work.
+          defaultCharacterAssets:
+            rpmModelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/25c56c70-4f2c-4304-ad31-c0ce4dbaf57f.glb
+            rpmImageUriPortrait: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/25c56c70-4f2c-4304-ad31-c0ce4dbaf57f_portrait.jpg
+            rpmImageUriPosture: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/25c56c70-4f2c-4304-ad31-c0ce4dbaf57f_posture.jpg
+            avatarImg: 
+            avatarImgOriginal: 
+            thumbnailProgress: 1
+            avatarProgress: 1
+    keySecrets:
+    - key: TVkqt2CKGOgkE4OK8AZRGkRUjkH0ECYJ
+      secret: Qq4CdCtEYONCKruZfDO6GwFhpnqYpXc0F5R09Ff03a9mNRZjeWMvltNRZzmxcNa5
+      state: ACTIVE
+  - name: workspaces/default-yyzvfpyjs0ckfbps9ajv7w
+    displayName: Inworld AI Demos
+    experimentalFeatures: []
+    billingAccount: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes: []
+    keySecrets: []
+  m_UserID: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
+  m_BillingAccount: billing-accounts/6d4e5afb-8137-4db3-b63c-971f40e28a13
