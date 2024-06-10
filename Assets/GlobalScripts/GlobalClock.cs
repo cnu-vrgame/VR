@@ -12,6 +12,7 @@ public class GlobalClock : MonoBehaviour
     public float remainTime = 150.0F;
     public TextMeshPro bombDisplay;
     private List<GameObject> wires = new();
+    public GameObject Explosion;
 
     private void ShuffleWire()
     {
@@ -79,8 +80,15 @@ public class GlobalClock : MonoBehaviour
     {
         if (startCounter)
         {
-            this.remainTime -= Time.deltaTime;
-            this.UpdateBombTime();
+            if (this.remainTime >= 0.0F)
+            {
+                this.UpdateBombTime();
+            } else
+            {
+                Explosion.active = true;
+                StartCoroutine(DelayedDelete());
+            }
+                this.remainTime -= Time.deltaTime;
         }
 
     }
@@ -95,5 +103,12 @@ public class GlobalClock : MonoBehaviour
     string LeadingZero(int x)
     {
         return x.ToString().PadLeft(2, '0');
+    }
+
+    IEnumerator DelayedDelete()
+    {
+
+        yield return new WaitForSeconds(6);
+        Explosion.GetComponentInParent<Renderer>().enabled = false;
     }
 }
