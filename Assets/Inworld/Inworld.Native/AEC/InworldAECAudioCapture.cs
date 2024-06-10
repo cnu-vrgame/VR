@@ -53,8 +53,8 @@ namespace Inworld.AEC
         }
         protected new void Update()
         {
-            m_IsAudioDebugging = Input.GetKey(m_DumpAudioHotKey);
-            if (!m_IsAudioDebugging)
+            m_IsAudioDebugging = false;//Input.GetKey(m_DumpAudioHotKey);
+            if (m_IsAudioDebugging)
             {
                 _DumpAudioFiles();
             }
