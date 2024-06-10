@@ -617,6 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5a23fcb6f9c4941bf12fc4774e1cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcControllers: {fileID: 958575905}
 --- !u!64 &68468504
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1505,6 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5a23fcb6f9c4941bf12fc4774e1cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcControllers: {fileID: 958575905}
 --- !u!64 &157890832
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4967,6 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5a23fcb6f9c4941bf12fc4774e1cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcControllers: {fileID: 958575905}
 --- !u!1 &684754783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5628056358492308370, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
@@ -6368,6 +6371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5a23fcb6f9c4941bf12fc4774e1cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcControllers: {fileID: 958575905}
 --- !u!64 &772257627
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8468,7 +8472,7 @@ MonoBehaviour:
   m_BubbleLeft: {fileID: 3364394929633695711, guid: f324550a32836b94693f21f7a416411a, type: 3}
   m_BubbleRight: {fileID: 818457071051776631, guid: 5024602b533211241bb0ab4fd7e088e3, type: 3}
   m_ChatOptions:
-    audio: 1
+    audio: 0
     text: 1
     emotion: 0
     narrativeAction: 1
@@ -11270,7 +11274,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 0ca37e5e5bdc2704186e1275d2279ec0, type: 2}
     - target: {fileID: 3331053244747017235, guid: f787cea5870c91b4ebe8571dc197a25f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3331053244747017235, guid: f787cea5870c91b4ebe8571dc197a25f, type: 3}
       propertyPath: m_DeviceName
@@ -12911,6 +12915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5a23fcb6f9c4941bf12fc4774e1cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcControllers: {fileID: 958575905}
 --- !u!64 &1522963837
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15411,6 +15416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5a23fcb6f9c4941bf12fc4774e1cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcControllers: {fileID: 958575905}
 --- !u!64 &1735032244
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18557,6 +18563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5a23fcb6f9c4941bf12fc4774e1cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcControllers: {fileID: 958575905}
 --- !u!64 &2088661726
 MeshCollider:
   m_ObjectHideFlags: 0

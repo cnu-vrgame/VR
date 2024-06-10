@@ -6,7 +6,7 @@ using Inworld.Sample.RPM;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class npcController : MonoBehaviour
+public class NpcController : MonoBehaviour
 {
     public PlayerControllerRPM PlayerControllerScript;   
     // Start is called before the first frame update
@@ -34,5 +34,10 @@ public class npcController : MonoBehaviour
         //GetComponent<AudioCapture>().ChangeInputDevice(devices);
         //InworldController.Audio.IsRecording = true;
 
+    }
+
+    public void SendMessage(string message)
+    {
+        PlayerControllerScript.MySendMessage(message);
     }
 }
