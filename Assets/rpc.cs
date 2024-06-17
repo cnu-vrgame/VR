@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using UnityEditor.PackageManager;
+using static Autodesk.Fbx.FbxStatus;
 
 public class Rpc : MonoBehaviour
 {
@@ -14,10 +15,14 @@ public class Rpc : MonoBehaviour
     private TcpListener tcpListener;
     private Thread tcpListenerThread;
     private TcpClient connectedTcpClient;
+    internal static Rpc instance;
     #endregion
+
+    Queue<int> jobs = new Queue<int>();
 
     void Awake()
     {
+        instance = this;
         Debug.Log("Start Server");
 
         // Start TcpServer background thread
@@ -29,16 +34,38 @@ public class Rpc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (jobs.Count > 0)
+        {
+            int stat = jobs.Dequeue();
+            Debug.Log($"STAT: {stat}");
+            HandleIncomingStatus(stat);
+        }
     }
 
     private void HandleIncomingStatus(int status)
     {
-        GameObject emoji = GameObject.Find("Arrow");
+        GameObject emoji = GameObject.Find("EmotionPointer");
         if (emoji != null)
         {
-            emoji.GetComponent<emotioncontroller>().setLevel(status);
+            var controller = emoji.GetComponentInChildren<emotioncontroller>();
+            if (controller != null)
+            {
+                controller.setLevel(status);
+            }
+            else
+            {
+                Debug.LogError("Controller.. Not presented");
+            }
         }
+        else
+        {
+            Debug.LogError("EmotionPointer Not Found");
+        }
+    }
+
+    internal void AddJob(int code)
+    {
+        jobs.Enqueue(code);
     }
     // Runs in background TcpServerThread; Handles incomming TcpClient requests
     private void ListenForIncommingRequest()
@@ -69,9 +96,9 @@ public class Rpc : MonoBehaviour
                             }
 
                             int statusCode = BitConverter.ToInt32(bytesTypeOfService, 0);
-                            HandleIncomingStatus(statusCode);
+                            Rpc.instance.AddJob(statusCode);
 
-                            //Debug.Log($"STATUS_CODE: {statusCode}");
+                            Debug.Log($"STATUS_CODE: {statusCode}");
 
                         } while (true);
                     }

@@ -8,44 +8,44 @@ public class emotioncontroller : MonoBehaviour
 {
     public float remainTime = 150.0F;
     Image emoticonImage;
+    RectTransform pos;
     void Start()
     {
         emoticonImage = this.gameObject.GetComponent<Image>();
+        pos = this.gameObject.GetComponent<RectTransform>();
+
+        pos.anchoredPosition = Vector2.zero;
     }
 
-    void getEmotionImage()
-    {
-        
-    }
 
     public void setLevel(int level)
     {
         switch (level)
         {
             case 0:
-                emoticonImage.rectTransform.position.Set(-400, 0, 0);
+                pos.anchoredPosition = new Vector2(-400, 32);
                 break;
             case 1:
-                emoticonImage.rectTransform.position.Set(-266, 0, 0);
+                pos.anchoredPosition = new Vector2(-266, 32);
                 break;
             case 2:
-                emoticonImage.rectTransform.position.Set(-133, 0, 0);
+                pos.anchoredPosition = new Vector2(-133, 32);
                 break;
             case 3:
-                emoticonImage.rectTransform.position.Set(0, 0, 0);
+                pos.anchoredPosition = new Vector2(0, 32);
                 break;
             case 4:
-                emoticonImage.rectTransform.position.Set(133, 0, 0);
+                pos.anchoredPosition = new Vector2(133, 32);
                 break;
             case 5:
-                emoticonImage.rectTransform.position.Set(266, 0, 0);
+                pos.anchoredPosition = new Vector2(266, 32);
                 break;
             case 6:
-                emoticonImage.rectTransform.position.Set(400, 0, 0);
+                pos.anchoredPosition = new Vector2(400, 32);
                 break;
             
             default:
-                emoticonImage.rectTransform.position.Set(0, 0, 0);
+                pos.anchoredPosition = new Vector2(0, 32);
                 break;
         }
     }
