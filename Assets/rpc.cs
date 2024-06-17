@@ -1,0 +1,85 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using UnityEditor.PackageManager;
+
+public class Rpc : MonoBehaviour
+{
+    #region private members
+    private TcpListener tcpListener;
+    private Rpc instance;
+    private Thread tcpListenerThread;
+    private TcpClient connectedTcpClient;
+    #endregion
+
+    void Awake()
+    {
+        Debug.Log("Start Server");
+        instance = this;
+
+        // Start TcpServer background thread
+        tcpListenerThread = new Thread(new ThreadStart(ListenForIncommingRequest));
+        tcpListenerThread.IsBackground = true;
+        tcpListenerThread.Start();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void HandleIncomingStatus(int status)
+    {
+        GameObject emoji = GameObject.Find("Arrow");
+        if (emoji != null)
+        {
+            emoji.GetComponent<emotioncontroller>().setLevel(status);
+        }
+    }
+    // Runs in background TcpServerThread; Handles incomming TcpClient requests
+    private void ListenForIncommingRequest()
+    {
+        try
+        {
+            tcpListener = new TcpListener(IPAddress.Parse("127.0.0.1"), 50001);
+            tcpListener.Start();
+            Debug.Log("Server is listening");
+
+            while (true)
+            {
+                using (connectedTcpClient = tcpListener.AcceptTcpClient())
+                {
+                    // Get a stream object for reading
+                    using (NetworkStream stream = connectedTcpClient.GetStream())
+                    {
+                        // Read incomming stream into byte array.
+                        do
+                        {
+                            Byte[] bytesTypeOfService = new Byte[4];
+                            int decodedBytes = stream.Read(bytesTypeOfService, 0, 4);
+                            if (!BitConverter.IsLittleEndian)
+                            {
+                                Array.Reverse(bytesTypeOfService);
+                            }
+
+                            int statusCode = BitConverter.ToInt32(bytesTypeOfService, 0);
+
+                            Debug.Log($"STATUS_CODE: {statusCode}");
+
+                        } while (true);
+                    }
+                }
+            }
+        }
+        catch (SocketException socketException)
+        {
+            Debug.Log("SocketException " + socketException.ToString());
+        }
+    }
+}
