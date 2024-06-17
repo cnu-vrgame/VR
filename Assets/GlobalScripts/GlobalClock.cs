@@ -9,7 +9,7 @@ using Color = UnityEngine.Color;
 public class GlobalClock : MonoBehaviour
 {
     private bool startCounter = false;
-    public float remainTime = 150.0F;
+    public float remainTime = 300.0F;
     public TextMeshPro bombDisplay;
     private List<GameObject> wires = new();
     public GameObject Explosion;

@@ -13150,6 +13150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b363b6e85874d3944afa58788b27769f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  remainTime: 150
 --- !u!1 &1318212481
 GameObject:
   m_ObjectHideFlags: 0
@@ -19229,6 +19230,7 @@ GameObject:
   - component: {fileID: 1871982117}
   - component: {fileID: 1871982116}
   - component: {fileID: 1871982118}
+  - component: {fileID: 1871982119}
   m_Layer: 0
   m_Name: Glob
   m_TagString: Untagged
@@ -19276,6 +19278,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1008fb25411c7d47841cdeceb7f865e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1871982119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871982115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f7a7ab0c6bdad469b895ab66c1e115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1896264635

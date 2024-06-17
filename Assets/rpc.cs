@@ -12,7 +12,6 @@ public class Rpc : MonoBehaviour
 {
     #region private members
     private TcpListener tcpListener;
-    private Rpc instance;
     private Thread tcpListenerThread;
     private TcpClient connectedTcpClient;
     #endregion
@@ -20,7 +19,6 @@ public class Rpc : MonoBehaviour
     void Awake()
     {
         Debug.Log("Start Server");
-        instance = this;
 
         // Start TcpServer background thread
         tcpListenerThread = new Thread(new ThreadStart(ListenForIncommingRequest));
@@ -48,6 +46,8 @@ public class Rpc : MonoBehaviour
         try
         {
             tcpListener = new TcpListener(IPAddress.Parse("127.0.0.1"), 50001);
+            // tcpListener.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
+            // tcpListener.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseUnicastPort, true);
             tcpListener.Start();
             Debug.Log("Server is listening");
 
@@ -69,8 +69,9 @@ public class Rpc : MonoBehaviour
                             }
 
                             int statusCode = BitConverter.ToInt32(bytesTypeOfService, 0);
+                            HandleIncomingStatus(statusCode);
 
-                            Debug.Log($"STATUS_CODE: {statusCode}");
+                            //Debug.Log($"STATUS_CODE: {statusCode}");
 
                         } while (true);
                     }
